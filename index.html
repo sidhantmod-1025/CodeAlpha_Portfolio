@@ -1,1 +1,716 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Sidhant Kumar | Frontend Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#0f172a;
+--card:rgba(255,255,255,0.08);
+--text:#ffffff;
+--primary:#38bdf8;
+--secondary:#8b5cf6;
+}
+
+body{
+background:linear-gradient(to right,#0f172a,#111827);
+color:var(--text);
+overflow-x:hidden;
+transition:0.4s;
+}
+
+body.light{
+background:#f4f4f4;
+color:#111827;
+}
+body.light nav ul li a,
+body.light .socials a{
+color:black;
+}
+body.light nav ul li a:hover,
+body.light .socials a:hover{
+color:#38bdf8;
+}
+a{
+text-decoration:none;
+color:white;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.05);
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav{
+width:90%;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:var(--primary);
+}
+
+nav ul{
+display:flex;
+align-items: center;
+justify-content: space-between;
+padding-left:50%;
+
+gap:55px;
+list-style:none;
+}
+
+nav ul li a{
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:var(--primary);
+}
+
+.theme-btn{
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+border:none;
+padding:10px 18px;
+border-radius:10px;
+color:white;
+cursor:pointer;
+font-weight:600;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:100px 20px;
+text-align:center;
+}
+
+.glass{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+border-radius:25px;
+padding:50px;
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+width:100%;
+max-width:900px;
+ margin:0 auto;
+ 
+}
+
+.cursor-glow{
+ position:absolute;
+ width:200px;
+ height:200px;
+ background:rgba(56,189,248,0.15);
+ border-radius:50%;
+ filter:blur(60px);
+ pointer-events:none;
+ transform:translate(-50%,-50%);
+}
+
+
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.hero span{
+color:var(--primary);
+}
+
+.hero h2{
+font-size:30px;
+margin-bottom:20px;
+}
+
+.typing{
+color:#8b5cf6;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:#d1d5db;
+}
+
+.btns{
+margin-top:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+margin:10px;
+border-radius:12px;
+font-weight:600;
+transition:0.4s;
+}
+
+.primary{
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+}
+
+.secondary{
+border:2px solid rgba(255,255,255,0.2);
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:100px 10%;
+}
+
+
+.title{
+    font-size:42px;
+    text-align:center;
+    margin:0 auto 50px;
+    width:100%;
+    padding-right:15%;
+}
+
+
+.about p{
+ 
+text-align:center;
+line-height:1.8;
+font-size:18px;
+
+}
+#about{
+ 
+  margin-left: 0;
+   padding:100px 10%;
+}
+
+ .About{
+  
+    text-align:center;
+    margin-bottom:50px;
+    font-size:42px;
+}
+
+
+
+#skills{
+padding-left:10%;
+padding-right:10%;
+}
+.skill{
+
+  
+margin-bottom:25px;
+
+}
+
+.skill-name{
+margin-bottom:10px;
+font-weight:600;
+}
+
+.progress{
+width:100%;
+height:14px;
+background:#1f2937;
+border-radius:50px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+border-radius:50px;
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+transition:2s;
+}
+#pro{
+  font-size:42px;
+    text-align:center;
+    width:100%;
+    padding-right:2%;
+     margin-bottom:50px;
+}
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.project-card{
+transition:0.4s;
+text-align: center;
+}
+
+
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+.project-card h3{
+margin-bottom:10px;
+}
+
+.contact-box input,
+.contact-box textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:12px;
+outline:none;
+
+}
+#contact{
+   padding:100px 10%;
+}
+.contact-box{
+    max-width:900px;
+    margin:0 auto;
+}
+
+
+    #title{
+      font-size: 50px;
+    text-align:center;
+    margin-bottom:50px;
+    padding-right:0;
+}
+
+
+
+.contact-box button{
+width:100%;
+border:none;
+padding:15px;
+border-radius:12px;
+background:linear-gradient(to right,#38bdf8,#8b5cf6);
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+footer{
+padding:30px;
+text-align:center;
+}
+
+.socials a{
+margin:0 10px;
+font-size:18px;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero h2{
+font-size:24px;
+}
+
+.title{
+font-size:32px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">Sidhant.K</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="theme-btn" onclick="toggleTheme()">Theme</button>
+</nav>
+</header>
+
+<section class="hero">
+<div class="glass reveal">
+
+<h1>Hi, I'm <span>Sidhant Kumar</span></h1>
+
+<h2>I am a <span class="typing"></span></h2>
+
+<p>
+Frontend Developer passionate about building modern,
+responsive and professional websites using HTML, CSS
+and JavaScript.
+</p>
+
+<div class="btns">
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="#contact" class="btn secondary">Hire Me</a>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<h2 class="About">About Me</h2>
+
+<div class="glass about reveal">
+<p>
+Hi, I'm Sidhant Kumar, an aspiring Frontend Developer passionate about creating responsive, user-friendly, and visually appealing websites. I have experience working with HTML, CSS, JavaScript, C, and C++, and I enjoy turning ideas into interactive web applications.
+
+I have built projects such as a Portfolio Website, Student Management System, Registration Form, and a WhatsApp-inspired Chat Application to strengthen my development and problem-solving skills.
+
+Currently, I am learning React.js and exploring modern web technologies to become a better developer. I am always eager to learn, build real-world projects, and grow in the field of software development.
+</p>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="title reveal">Skills</h2>
+
+<div class="glass skills-box reveal">
+
+<div class="skill">
+<div class="skill-name">HTML</div>
+<div class="progress">
+<div class="progress-bar" data-width="95%"></div>
+</div>
+</div>
+ <br>
+<div class="skill">
+<div class="skill-name">CSS</div>
+<div class="progress">
+<div class="progress-bar" data-width="90%"></div>
+</div>
+</div>
+ <br>
+<div class="skill">
+<div class="skill-name">JavaScript</div>
+<div class="progress">
+<div class="progress-bar" data-width="80%"></div>
+</div>
+</div>
+<br>
+<div class="skill">
+<div class="skill-name">c programming</div>
+<div class="progress">
+<div class="progress-bar" data-width="95%"></div>
+</div>
+<div>
+ <br>
+<div class="skill">
+<div class="skill-name">c++</div>
+<div class="progress">
+<div class="progress-bar" data-width="90%"></div>
+</div>
+<div>
+ <br>
+<div class="skill">
+<div class="skill-name">Basic DSA</div>
+<div class="progress">
+<div class="progress-bar" data-width="70%"></div>
+</div>
+<div>
+ <br>
+<div class="skill">
+<div class="skill-name">React.js</div>
+<div class="progress">
+<div class="progress-bar" data-width="90%"></div>
+</div>
+<div>
+ <br>
+<div class="skill">
+<div class="skill-name">Python</div>
+<div class="progress">
+<div class="progress-bar" data-width="90%"></div>
+</div>
+<div>
+ <br>
+<div class="skill">
+<div class="skill-name">Git & GitHub</div>
+<div class="progress">
+<div class="progress-bar" data-width="90%"></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<h2 id="pro">Projects</h2>
+
+<div class="project-grid">
+
+<div class="glass project-card reveal">
+<h3>Student Portal </h3>
+<p>**Student Management System**
+
+Developed a responsive and user-friendly Student Management System using HTML, CSS, and JavaScript. The project is designed to manage student information efficiently through an organized and interactive interface.
+
+The application was built to strengthen my understanding of JavaScript, DOM manipulation, form handling, and data management concepts. Special focus was given to creating a simple and intuitive user experience for adding, viewing, and managing student records.
+
+**Key Features:**
+
+* Add and Manage Student Records
+* Interactive User Interface
+* Form Validation
+* Organized Data Display
+* Responsive Design
+* Easy-to-Use Layout
+* Efficient Record Management
+
+**Technologies Used:** HTML5, CSS3, JavaScript
+
+This project helped me improve my problem-solving abilities and gain practical experience in developing real-world web applications with frontend technologies.
+<h2>GitHub Repository:</h2>
+<a href=" https://sidhantmod-1025.github.io/Student-portal-/">click it</a>
+</p>
+</div>
+
+<div class="glass project-card reveal">
+<h3>Portfolio Website</h3>
+<p>**Modern Personal Portfolio Website**
+
+Developed a fully responsive and modern Personal Portfolio Website using HTML, CSS, and JavaScript. The portfolio features a clean glassmorphism design, smooth scroll animations, an interactive typing effect, animated skill progress bars, and a dark/light theme toggle.
+
+The website showcases my skills, projects, and professional information in an engaging and user-friendly manner. Special attention was given to responsive design, ensuring a seamless experience across desktop, tablet, and mobile devices.
+
+**Key Features:**
+
+* Responsive Design for all screen sizes
+* Glassmorphism UI Design
+* Dark/Light Theme Toggle
+* Typing Text Animation
+* Scroll Reveal Animations
+* Animated Skill Progress Bars
+* Project Showcase Section
+* Contact Form Interface
+* Modern and Professional User Experience
+
+**Technologies Used:** HTML5, CSS3, JavaScript
+</p>
+</div>
+
+<div class="glass project-card reveal">
+<h3>Calculator</h3>
+<p>Calculator Web Application
+
+Developed a responsive and interactive Calculator Web Application using HTML, CSS, and JavaScript. The project performs basic arithmetic operations such as addition, subtraction, multiplication, and division through a clean and user-friendly interface.
+
+Key Features:
+• Basic Arithmetic Operations
+• Interactive User Interface
+• Responsive Design
+• Real-Time Display
+
+Technologies Used: HTML5, CSS3, JavaScript
+
+<h2>GitHub Repository:</h2>
+ <a href ="https://sidhantmod-1025.github.io/Calculator-/">Click it.</a>
+.</p>
+</div>
+
+<div class="glass project-card reveal">
+<h3>Landing Page</h3>
+<p>**Landing Page**
+
+Developed a responsive and modern Landing Page using HTML, CSS, and JavaScript. The project features a clean design, structured layout, and user-friendly interface that provides an engaging browsing experience across different devices.
+
+The landing page was built to improve my frontend development skills, including responsive design, layout creation, and UI development. Special focus was given to creating an attractive design, smooth navigation, and a seamless user experience.
+
+**Key Features:**
+
+* Responsive Design
+* Modern User Interface
+* Smooth Navigation
+* Clean and Structured Layout
+* Mobile-Friendly Design
+* Interactive Elements
+* Professional Appearance
+
+**Technologies Used:** HTML5, CSS3, JavaScript
+
+This project helped me strengthen my frontend development skills and gain practical experience in building modern, responsive, and visually appealing web pages.
+
+<h2>GitHub Repository:</h2>
+  <a href ="https://sidhantmod-1025.github.io/clone-for-first/">click it </a>
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 id="title">Contact Me</h2>
+
+<div class="glass contact-box reveal">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button>Send Message</button>
+</div>
+</section>
+
+<footer>
+<p>Follow Me</p>
+
+<div class="socials">
+<a href="https://github.com/sidhantmod-1025">GitHub</a>
+<a href="https://www.linkedin.com/in/sidhant-kumar-0aa71940a?utm_source=share_via&utm_content=profile&utm_medium=member_android">LinkedIn</a>
+<a href="https://www.instagram.com/sidhant__modi?igsh=aW1lbG83Njd4eWFo">Instagram</a>
+</div>
+</footer>
+
+<script>
+  
+const roles=[
+"Frontend Developer",
+"Web Developer",
+"JavaScript Learner",
+"UI Creator"
+];
+
+let roleIndex=0;
+let charIndex=0;
+let deleting=false;
+
+function typingEffect(){
+
+const typing=document.querySelector(".typing");
+const current=roles[roleIndex];
+
+if(!deleting){
+typing.textContent=current.substring(0,charIndex++);
+if(charIndex>current.length){
+deleting=true;
+setTimeout(typingEffect,1000);
+return;
+}
+}else{
+typing.textContent=current.substring(0,charIndex--);
+if(charIndex===0){
+deleting=false;
+roleIndex=(roleIndex+1)%roles.length;
+}
+}
+
+setTimeout(typingEffect,deleting?50:100);
+}
+
+typingEffect();
+
+function toggleTheme(){
+document.body.classList.toggle("light");
+}
+
+window.addEventListener("scroll",()=>{
+
+document.querySelectorAll(".reveal").forEach(el=>{
+
+const top=el.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+el.classList.add("active");
+}
+
+});
+
+});
+
+window.addEventListener("scroll",()=>{
+
+document.querySelectorAll(".progress-bar")
+.forEach(bar=>{
+
+const top=bar.getBoundingClientRect().top;
+
+if(top<window.innerHeight){
+bar.style.width=bar.dataset.width;
+}
+
+});
+
+});
+const cards = document.querySelectorAll(".glass");
+
+cards.forEach(card => {
+
+  card.addEventListener("mouseenter", () => {
+    card.style.boxShadow =
+      "0 0 20px #38bdf8, 0 0 40px #38bdf8, 0 0 60px #8b5cf6";
+
+    card.style.transform = "translateY(-8px)";
+    card.style.transition = "0.4s";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.boxShadow = "0 8px 32px rgba(0,0,0,0.2)";
+    card.style.transform = "translateY(0)";
+  });
+
+});
+const glow = document.createElement("div");
+glow.classList.add("cursor-glow");
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove",(e)=>{
+ glow.style.left = e.pageX + "px";
+ glow.style.top = e.pageY + "px";
+});
+</script>
+
+</body>
+</html>
